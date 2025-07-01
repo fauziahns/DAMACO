@@ -13,7 +13,7 @@ export default function Galeri() {
         <NavigationMenuDemo className='text-white' textColor='text-black'/>
       </div>
 
-      {/* Main Content */}
+      {/* Main Content */} 
       <div className="flex flex-col items-center justify-center text-center py-16 px-4">
         <h1 className="text-3xl sm:text-4xl font-bold text-blue-900 mb-6">
           Galeri PT. Dunia Maya Comunica

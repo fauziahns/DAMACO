@@ -72,7 +72,6 @@ export default function Product() {
                         DJI MAVIC
                         </CardItem>
                         <CardItem
-                            as="p"
                             translateZ="60"
                             className="text-white text-justify text-sm mt-2"
                             >
@@ -91,7 +90,6 @@ export default function Product() {
                             />
                         </CardItem>
                         <CardItem
-                            as="p"
                             translateZ="60"
                             className="text-neutral-500 text-center justify-center text-sm mt-2 dark:text-neutral-300"
                             >
@@ -128,7 +126,6 @@ export default function Product() {
                         DJI TERRA
                         </CardItem>
                         <CardItem
-                            as="p"
                             translateZ="60"
                             className="text-white text-justify text-sm mt-2"
                             >
@@ -147,7 +144,6 @@ export default function Product() {
                             />
                         </CardItem>
                         <CardItem
-                            as="p"
                             translateZ="60"
                             className="text-neutral-500 text-center justify-center text-sm mt-2 dark:text-neutral-300"
                             >
