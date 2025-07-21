@@ -5,7 +5,7 @@ import { ImageCarousel } from '@/components/marquee'
 import { NavigationMenuDemo } from '@/components/navbar'
 import { LayananCard } from '@/components/service'
 import { motion } from 'framer-motion'
-import { Award, MapPin } from 'lucide-react'
+import { Award, ChevronLeft, ChevronRight, MapPin } from 'lucide-react'
 import { useState } from 'react'
 
 export default function Home() {
@@ -15,6 +15,23 @@ export default function Home() {
         const { clientX, clientY } = e;
         setMousePosition({ x: clientX, y: clientY });
       };
+
+              const videos = [
+        "/gallery/22.mp4",
+        "/gallery/21.mp4",
+        "/gallery/18.mp4",
+        "/gallery/20.mp4",
+        ];
+
+          const [currentIndex, setCurrentIndex] = useState(0);
+
+        const prevSlide = () => {
+            setCurrentIndex((prev) => (prev === 0 ? videos.length - 1 : prev - 1));
+        };
+
+        const nextSlide = () => {
+            setCurrentIndex((prev) => (prev === videos.length - 1 ? 0 : prev + 1));
+        };
       
   return (
     <div>
@@ -100,7 +117,7 @@ export default function Home() {
                 </div>
 
         <div className="flex gap-5 flex-col px-8  bg-white">
-            <p className='pt-20  max-w-[800px] text-2xl font-semibold leading-loose text-justify pb-5 text-black bg-white'>Kami menciptakan solusi digital yang berdampak melalui strategi yang tepat, desain kolaboratif, dan pengembangan yang inovatif.</p>
+            <p className='pt-20  max-w-[800px] text-2xl leading-relaxed text-justify pb-5 text-slate-500 bg-white'>Kami menciptakan solusi digital yang berdampak melalui strategi yang tepat, desain kolaboratif, dan pengembangan yang inovatif.</p>
         </div>
 
         <div className="flex flex-col space-y-4 px-8 py-10 bg-white">
@@ -149,9 +166,37 @@ export default function Home() {
                 <ImageCarousel/>
             </div>
         </div>
-        <div className="flex flex-col items-center justify-center text-center pb-5">
 
-        </div>
+            <section className="py-16 px-4 md:px-12 text-slate-800">
+                <div className="max-w-3xl mx-auto text-center">
+                    <h2 className="text-2xl md:text-3xl font-bold text-green-700 mb-6">
+                    Video Dokumentasi PT. Dunia Maya Comunica
+                    </h2>
+                    <div className="relative rounded-2xl shadow-lg aspect-video overflow-hidden group">
+                    {/* Video */}
+                    <video
+                        key={videos[currentIndex]} // reset video on change
+                        className="w-full h-full object-cover"
+                        src={videos[currentIndex]}
+                        controls
+                        playsInline
+                    />
+                    {/* Chevron Buttons */}
+                    <button
+                        onClick={prevSlide}
+                        className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white/90 p-2 rounded-full shadow transition"
+                    >
+                        <ChevronLeft size={24} />
+                    </button>
+                    <button
+                        onClick={nextSlide}
+                        className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white/90 p-2 rounded-full shadow transition"
+                    >
+                        <ChevronRight size={24} />
+                    </button>
+                    </div>
+                </div>
+            </section>
         <Footer/>
 
     </div>

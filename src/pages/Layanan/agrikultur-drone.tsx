@@ -2,7 +2,8 @@ import Footer from "@/components/footer";
 import { NavigationMenuDemo } from "@/components/navbar";
 import SpotlightCard from "@/components/react-bits/spotlight-card";
 import { motion } from "framer-motion";
-import { AlertTriangle, Droplet, Droplets, Gauge, Leaf, SearchCheck, SprayCan, Tractor } from "lucide-react";
+import { AlertTriangle, ChevronLeft, ChevronRight, Droplet, Droplets, Gauge, Leaf, SearchCheck, SprayCan, Tractor } from "lucide-react";
+import { useState } from "react";
 
 export default function AgrikulturDrone() {
     const features = [
@@ -51,6 +52,23 @@ export default function AgrikulturDrone() {
             },
         ];
 
+        const videos = [
+        "/gallery/22.mp4",
+        "/gallery/21.mp4",
+        "/gallery/18.mp4",
+        "/gallery/20.mp4",
+        ];
+
+          const [currentIndex, setCurrentIndex] = useState(0);
+
+        const prevSlide = () => {
+            setCurrentIndex((prev) => (prev === 0 ? videos.length - 1 : prev - 1));
+        };
+
+        const nextSlide = () => {
+            setCurrentIndex((prev) => (prev === videos.length - 1 ? 0 : prev + 1));
+        };
+
   return (
     <div>
       <section className="relative h-[600px] w-full bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/hero5.png')" }}>
@@ -69,6 +87,17 @@ export default function AgrikulturDrone() {
                     <p className="text-justify max-w-[900px] leading-loose mt-5">
                         Teknologi drone memanfaatkan fitur yang dimiliki untuk membantu petani dalam bidang pertanian, seperti : sistem navigasi, perangkat perekam seperti kamera, infrared, dan berbagai sensor yang dimiliki drone. Drone juga mengoleksi raw data yang kemudian diolah menggunakan algoritma menjadi informasi yang berguna bagi petani. Kemampuan tersebut kemudian diaplikasikan untuk melakukan hal-hal seperti
                     </p>
+                </div>
+            </div>
+
+            <div className="mt-10 flex justify-center items-center px-4">
+                <div className="relative w-full max-w-3xl rounded-xl overflow-hidden shadow-lg border border-slate-300 bg-white">
+                    <video
+                    className="w-full h-full object-cover"
+                    src="/gallery/19.mp4"
+                    controls
+                    playsInline
+                    />
                 </div>
             </div>
 
@@ -186,13 +215,30 @@ export default function AgrikulturDrone() {
                         <h2 className="text-2xl md:text-3xl font-bold text-green-700 mb-6">
                         Dokumentasi PT. Dunia Maya Comunica
                         </h2>
-                        <div className="relative overflow-hidden rounded-2xl shadow-lg aspect-video">
+
+                        <div className="relative rounded-2xl shadow-lg aspect-video overflow-hidden group">
+                        {/* Video */}
                         <video
+                            key={videos[currentIndex]} // reset video on change
                             className="w-full h-full object-cover"
-                            src="/gallery/22.mp4"
+                            src={videos[currentIndex]}
                             controls
                             playsInline
                         />
+
+                        {/* Chevron Buttons */}
+                        <button
+                            onClick={prevSlide}
+                            className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white/90 p-2 rounded-full shadow transition"
+                        >
+                            <ChevronLeft size={24} />
+                        </button>
+                        <button
+                            onClick={nextSlide}
+                            className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white/90 p-2 rounded-full shadow transition"
+                        >
+                            <ChevronRight size={24} />
+                        </button>
                         </div>
                     </div>
                 </section>
