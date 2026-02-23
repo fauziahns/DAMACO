@@ -41,7 +41,7 @@ export function NavigationMenuDemo({ className, textColor }: NavigationMenuDemoP
         <NavigationMenuTrigger>Layanan</NavigationMenuTrigger>
         <NavigationMenuContent>
           <ul className="grid w-[200px] gap-2 p-2 backdrop-blur-lg bg-white/80 border-b border-white/20 shadow-md">
-            {["Sistem Informasi Geografis", "Pemetaan Topografi dan Utilitas", "Pengembangan Aplikasi Web dan Mobile", "Agrikultur Drone"].map((layanan) => (
+            {["Sistem Informasi Geografis", "Pemetaan Topografi dan Utilitas", "Pengembangan Aplikasi Web dan Mobile", "Agrikultur Drone", "3D Geospatial & BIM Technology"].map((layanan) => (
               <li key={layanan}>
                 <NavigationMenuLink asChild className={`${textColor ?? ""}`}>
                   <Link to={`/layanan/${layanan.toLowerCase().replace(/\s/g, "-")}`}>
@@ -102,7 +102,9 @@ export function NavigationMenuDemo({ className, textColor }: NavigationMenuDemoP
       {menuOpen && (
         <div className="lg:hidden bg-white/80 backdrop-blur-md border-t border-white/20 shadow-md">
           <NavigationMenu>
-            <NavigationMenuList className="flex flex-col gap-2 p-4">
+            <NavigationMenuList className="flex flex-col gap-2 p-4 block py-3 px-4 rounded-xl text-slate-700 font-medium
+                            hover:bg-blue-50 hover:text-blue-600
+                            active:scale-[0.98] transition">
               {navItems}
             </NavigationMenuList>
           </NavigationMenu>

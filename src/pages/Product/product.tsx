@@ -106,9 +106,10 @@ export default function Product() {
             </div>
         </div>
 
-        <div className="mt-20 mx-10 md:mx-0">
-          <CustomCarousel />
-        </div>
+      <div className="mt-20 px-4 md:px-0">
+        <CustomCarousel />
+      </div>
+
 
         <div
             className="relative min-h-screen bg-cover bg-center mt-10"
@@ -159,7 +160,6 @@ export default function Product() {
                 </div>
             </div>
         </div>
-
       </div>
       <Footer/>
     </div>

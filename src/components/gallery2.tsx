@@ -28,7 +28,13 @@ export function ParallaxScrollDemo() {
     { type: "image", src: "/gallery/14.jpeg" },
     { type: "image", src: "/gallery/15.jpeg" },
     { type: "image", src: "/gallery/16.jpg" },
-    { type: "image", src: "/gallery/17.jpg" }
+    { type: "image", src: "/gallery/17.jpg" },
+        { type: "video", src: "/l5.mp4" },
+    { type: "video", src: "/l7.mp4" },
+  { type: "image", src: "/l1.jpeg" },
+    { type: "image", src: "/l2.jpeg" },
+    { type: "image", src: "/l3.jpeg" },
+    { type: "image", src: "/l4.jpeg" },
   ];
 
   return (

@@ -2,6 +2,7 @@ import Galeri from "@/pages/Dokumentasi/galeri"
 import Kai from "@/pages/Dokumentasi/kai"
 import Home from "@/pages/Home/home"
 import Kontak from "@/pages/Kontak/kontak"
+import Lidar from "@/pages/Layanan/3d"
 import AgrikulturDrone from "@/pages/Layanan/agrikultur-drone"
 import PengembanganAplikasi from "@/pages/Layanan/pengembangan-aplikasi"
 import SistemInformasiGeografis from "@/pages/Layanan/sistem-informasi-geografis"
@@ -26,6 +27,7 @@ const Router = () => {
                 <Route path="/layanan/pemetaan-topografi-dan-utilitas" Component={Topografi}/>
                 <Route path="/layanan/agrikultur-drone" Component={AgrikulturDrone}/>
                 <Route path="/layanan/pengembangan-aplikasi-web-dan-mobile" Component={PengembanganAplikasi}/>
+                <Route path="/layanan/3d-geospatial-&-bim-technology" Component={Lidar}/>
             </Routes>
         </BrowserRouter>
     )
