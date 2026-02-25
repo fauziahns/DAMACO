@@ -53,11 +53,11 @@ export function NavigationMenuDemo({ className, textColor }: NavigationMenuDemoP
           </ul>
         </NavigationMenuContent>
       </NavigationMenuItem>
-      <NavigationMenuItem>
+      {/* <NavigationMenuItem>
         <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
           <Link to="/dokumentasi/galeri">Dokumentasi</Link>
         </NavigationMenuLink>
-      </NavigationMenuItem>
+      </NavigationMenuItem> */}
       <NavigationMenuItem>
         <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
           <Link to="/portofolio">Portofolio Proyek</Link>
